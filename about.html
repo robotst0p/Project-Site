@@ -11,6 +11,21 @@
             <p class = "typewriter_scroll" id = "scroll">Scroll for Resume and Personal Info.</p>
             <p class = "typewriter_quicklinks" id = "quicklinks-prompt">See sidebar for quicklinks.</p>
         </div>
+
+        <div class = "about-container" id = "about-cont">
+            <p id = "about-title">What this site is about:</p>
+            <p id = "about-info"> My name is Tyler Meyer and I am a soon to be graduate from the University of Ohio State studying physics. 
+                I love physics, mathematics, programming and most of all: problem-solving. 
+                Physics has always given me interesting and complex problems to solve, and I love pairing this with programming to build visual solutions to these mathematical puzzles. 
+                I have a passion for visualizing an idea in my head, creating a design and building it until my idea comes to fruition.
+            </p>
+            <p id = "about-info-closing">Using coding to act on this passion gives me a great satisfaction that I have not gotten from any other activity. 
+                I love learning new technologies and the fact that I will never completely master coding as there is always something new to learn and implement.
+                I hope to make a career in this field and further develop this life long passion.
+            </p>
+            <p id = "about-site">This site will be a place for me to host any projects related to Web Developement or design, and just to experiment. This site was written from scratch, the code can be found on my GitHub linked below.
+            </p>
+        </div>
     
         <div class = "resume-container" id = "resume-cont">
             <p id = "resume-title">Resume: </p>
@@ -31,10 +46,10 @@
             <p id = "projects-title">Finished Projects:</p>
             
             <div class = "rps-container">
+                <img id = "rps-preview-image" src = "images/rps-preview.jpg">
                 <a id = "rps-link" href = "rps.html" target = "_blank">
-                    <img id = "rps-preview" src = "images/rps-preview.jpg">
+                    <p id = "rps-title">Rock Paper Scissors with Stats! (Click for link)</p>
                 </a>
-                <p id = "rps-title">Rock Paper Scissors with Stats!</p>
                 <p id =  "rps-description">My first foray into web development, this project introduced me to the world of design on the web.</p>
                 <p id ="rps-tech-title">Tech used:</p>
                 <ul id = "rps-tech-list">
@@ -46,29 +61,38 @@
             </div>
         </div>
 
-            <div class = "winp-container">
-                <div class = "particles-container">
-                    <p id = "winp-title">Works in Progress:</p>
-                    <a id = "particles-link" href = "particles.html" target = "_blank">
-                        <img id = "particles-preview" src = "images/particles-preview.jpg">
-                    </a>
-                    <p id = "particles-title">Particles!</p>
-                    <p id = "particles-description">Inspired by the Ohio State Hackathon webpage, I aimed to recreate a system in which particles travel along the page and connect with eachother...but this time, with physics!</p>
-                    <p id = "particles-tech-title">Tech used:</p>
-                    <ul id = "particles-tech-list">
-                        <li>HTML</li>
-                        <li>CSS (Experimenting with Canvas)</li>
-                        <li>Javascript</li>
-                        <li>Physics!</li>
-                    </ul>
-             </div>
+        <div class = "winp-container">
+            <div class = "particles-container">
+                <p id = "winp-title">Works in Progress:</p>
+                <iframe id = "particles-preview-image" src = "particles.html"></iframe>
+                <a id = "particles-link" href = "particles.html" target = "_blank">
+                    <p id = "particles-title">Particles! (Click for link)</p>
+                </a>
+                <p id = "particles-description">Inspired by the Ohio State Hackathon webpage, I aimed to recreate a system in which particles travel along the page and connect with eachother...but this time, with physics! Click to magnetize!</p>
+                <p id = "particles-tech-title">Tech used:</p>
+                <ul id = "particles-tech-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Physics!</li>
+                </ul>
+            </div>
         </div>
-                
+
+        <div class = "github-container">
+            <p id = "github-title">The code for this site and all projects can be found here:</p>
+            <a id = "github-link" href = "https://github.com/robotst0p/Project-Site" target = "_blank">https://github.com/robotst0p/Project-Site</a>
+        </div> 
+
     </body>
 
     <nav class = "tab">
         <div>
             <button><a href = "#resume-title" class = "resume_link">Resume</a></button>
+        </div>
+
+        <div class = "after-buttons" id = "about-link">
+            <button><a href = "#about-title">About</a></button>
         </div>
 
         <div class = "after-buttons" id = "projects-link">
@@ -77,6 +101,10 @@
 
         <div class = "after-buttons" id = "winp-link">
             <button><a href = "#winp-title" target = "_blank" class = "wip_link">Works In Progress</a></button>
+        </div>
+
+        <div class = "after-buttons" id = "github-nav-link">
+            <button><a href = "#github-title" target = "_blank">GitHub</a></button>
         </div>
     </nav>
 

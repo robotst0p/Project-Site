@@ -19,7 +19,7 @@ let rand_color = 0;
 let win_height = window.innerHeight;
 let win_width = window.innerWidth;
 
-let max_particle = 500;
+let max_particle = 80;
 let new_particle = 0;
 let current_particle = 0;
 
@@ -121,7 +121,7 @@ function animate() {
                 particle_array[i].y_pos += y_dir/500;
                     
                 ctx.beginPath();
-                ctx.strokeStyle = "black";
+                ctx.strokeStyle = "white";
                 if (current_particle.x_pos >= win_width || current_particle.y_pos > win_height || current_particle.x_pos < 0 || current_particle.y_pos < 0) {
                     rand_x = Math.floor(Math.random() * win_width);
                     rand_y = Math.floor(Math.random() * win_height);
@@ -158,7 +158,7 @@ function animate() {
                     line_distance = Math.sqrt((Math.pow((particle_array[k].x_pos - current_particle.x_pos),2) + Math.pow((particle_array[k].y_pos - current_particle.y_pos),2)));
                     if (line_distance < 50) {
                         rand_color = Math.floor(Math.random() * color_array.length);
-                        ctx.strokeStyle = "black";
+                        ctx.strokeStyle = "orange";
                         ctx.beginPath();
                         ctx.moveTo(current_particle.x_pos, current_particle.y_pos);
                         ctx.lineTo(particle_array[k].x_pos, particle_array[k].y_pos);
@@ -181,7 +181,7 @@ function animate() {
                 particle_array[i].y_pos += particle_array[i].init_y_dir * 1;
         
                 ctx.beginPath();
-                ctx.strokeStyle = "black";
+                ctx.strokeStyle = "white";
                 if (current_particle.x_pos >= win_width || current_particle.y_pos > win_height || current_particle.x_pos < 0 || current_particle.y_pos < 0) {
                     rand_x = Math.floor(Math.random() * win_width);
                     rand_y = Math.floor(Math.random() * win_height);
@@ -213,9 +213,9 @@ function animate() {
         
                 for (var k = 0; k <= particle_array.length - 1; k++) {
                     line_distance = Math.sqrt((Math.pow((particle_array[k].x_pos - current_particle.x_pos),2) + Math.pow((particle_array[k].y_pos - current_particle.y_pos),2)));
-                    if (line_distance < 100) {
+                    if (line_distance < 50) {
                         rand_color = Math.floor(Math.random() * color_array.length);
-                        ctx.strokeStyle = "black";
+                        ctx.strokeStyle = "orange";
                         ctx.beginPath();
                         ctx.moveTo(current_particle.x_pos, current_particle.y_pos);
                         ctx.lineTo(particle_array[k].x_pos, particle_array[k].y_pos);
