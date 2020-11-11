@@ -127,7 +127,6 @@ a {
     flex-direction: column;
     align-items: stretch;
     align-content: flex-start;
-    
 }
 .general-info {
     padding: 10px;
@@ -149,6 +148,36 @@ a {
 
 #greeting {
     font-size: 24px;
+}
+
+.about-container {
+    width: 70%;
+    margin-left: 13%;
+    margin-right: auto;
+    display: block;
+    text-align: left;
+    margin-top: 25%;
+    color: white;
+    font-family: Source Code Pro;
+}
+
+#about-title {
+    font-size: 34px;
+}
+
+#about-info {
+    margin-top: 3%;
+    font-size: 18px;
+}
+
+#about-info-closing {
+    margin-top: 3%;
+    font-size: 18px;
+}
+
+#about-site {
+    margin-top: 3%;
+    font-size: 18px;
 }
 
 .tab {
@@ -213,6 +242,7 @@ a {
     font-size: 20px;
 }
 
+
 .after-buttons {
     margin-top: 15%;
 }
@@ -233,7 +263,7 @@ a {
 }
 
 #resume-title {
-    margin-top: 50%;
+    margin-top: 40%;
     text-align: center;
     font-size: 40px;
     display: block;
@@ -301,6 +331,13 @@ a {
     font-weight: bold;
 }
 
+#rps-link {
+    text-decoration: underline;
+    color: orange;
+    animation: 
+        link-animation 1s step-end infinite;
+}
+
 #rps-description {
     margin-top: 3%;
 }
@@ -313,7 +350,7 @@ a {
     margin-left: 10%;
 }
 
-#rps-preview {
+#rps-preview-image {
     position: absolute;
     width: 40%;
     height: 40%;
@@ -323,13 +360,6 @@ a {
     border-left: .15em solid orange;
     border-right: .15em solid orange;
     border-bottom: .15em solid orange;
-    animation: 
-        blink-caret 1s step-end infinite;
-}
-
-#rps-preview:hover {
-    animation: 
-        blink-care .5s step-end infinite;
 }
 
 .winp-container {
@@ -364,6 +394,18 @@ a {
     margin-top: 7%;
 }
 
+#particles-link {
+    text-decoration: underline;
+    color: orange;
+    animation: 
+        link-animation 1s step-end infinite;
+}
+
+@keyframes link-animation {
+    from, to {text-decoration: none} 
+    50% {text-decoration: underline;}
+}
+
 #particles-description {
     margin-top: 3%;
 }
@@ -376,25 +418,41 @@ a {
     margin-left: 10%;
 }
 
-#particles-preview {
+#particles-preview-image {
     position: absolute;
     width: 40%;
     height: 40%;
     margin-left: 35%;
-    margin-top: .5%;
+    margin-top: 2.5%;
     border-top: .15em solid orange;
     border-left: .15em solid orange;
     border-right: .15em solid orange;
     border-bottom: .15em solid orange;
-    animation: 
-        blink-caret 1s step-end infinite;
 }
 
-#particles-preview:hover {
-    animation: 
-        blink-care .5s step-end infinite;
+.github-container {
+    color: white;
+    font-family: Source Code Pro;
+    margin-top: 25%;
+    text-align: center;
+    margin-left: 13%;
+    margin-right: auto;
+    width: 30%;
+    font-size: 18px;
+    text-align: left;
 }
-@keyframes blink-caret-resume {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
-  }
+
+#github-title {
+    margin-left: -6%;
+    font-size: 34px;
+
+}
+
+#github-link {
+    color: orange;
+    text-decoration: underline;
+    margin-left: -1.8%;
+    margin-top: 2%;
+    position: absolute;
+    font-size: 28px;
+}
