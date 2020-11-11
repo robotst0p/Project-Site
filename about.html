@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>About</title>
+        <link rel = "stylesheet" href = "about_styles.css">
+    </head>
+    <body>
+        <div class = "general-info-container" id = "gen-info-cont">
+            <p class = "typewriter_welcome" id = "welcome">Welcome to my site.</p>
+            <p class = "typewriter_scroll" id = "scroll">Scroll for Resume and Personal Info.</p>
+            <p class = "typewriter_quicklinks" id = "quicklinks-prompt">See sidebar for quicklinks.</p>
+        </div>
+    
+        <div class = "resume-container" id = "resume-cont">
+            <p id = "resume-title">Resume: </p>
+            <div>
+                <img id = "resume-image" src = "images/resume.jpg">
+            </div>
+            
+            <div id = "contact-info-greeting">
+                <p>You can contact me at:</p>
+            </div>
+
+            <div id = "email">
+                <p>meyer.1261@buckeyemail.osu.edu</p>
+            </div>
+        </div>
+
+        <div class = "projects-container" id = "projects-cont">
+            <p id = "projects-title">Finished Projects:</p>
+            
+            <div class = "rps-container">
+                <a id = "rps-link" href = "rps.html" target = "_blank">
+                    <img id = "rps-preview" src = "images/rps-preview.jpg">
+                </a>
+                <p id = "rps-title">Rock Paper Scissors with Stats!</p>
+                <p id =  "rps-description">My first foray into web development, this project introduced me to the world of design on the web.</p>
+                <p id ="rps-tech-title">Tech used:</p>
+                <ul id = "rps-tech-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Plotly Library</li>
+                </ul>
+            </div>
+        </div>
+
+            <div class = "winp-container">
+                <div class = "particles-container">
+                    <p id = "winp-title">Works in Progress:</p>
+                    <a id = "particles-link" href = "particles.html" target = "_blank">
+                        <img id = "particles-preview" src = "images/particles-preview.jpg">
+                    </a>
+                    <p id = "particles-title">Particles!</p>
+                    <p id = "particles-description">Inspired by the Ohio State Hackathon webpage, I aimed to recreate a system in which particles travel along the page and connect with eachother...but this time, with physics!</p>
+                    <p id = "particles-tech-title">Tech used:</p>
+                    <ul id = "particles-tech-list">
+                        <li>HTML</li>
+                        <li>CSS (Experimenting with Canvas)</li>
+                        <li>Javascript</li>
+                        <li>Physics!</li>
+                    </ul>
+             </div>
+        </div>
+                
+    </body>
+
+    <nav class = "tab">
+        <div>
+            <button><a href = "#resume-title" class = "resume_link">Resume</a></button>
+        </div>
+
+        <div class = "after-buttons" id = "projects-link">
+            <button><a href = "#projects-title" class = "projects_link">Finished Projects</a></button>
+        </div>
+
+        <div class = "after-buttons" id = "winp-link">
+            <button><a href = "#winp-title" target = "_blank" class = "wip_link">Works In Progress</a></button>
+        </div>
+    </nav>
+
+
+</html>

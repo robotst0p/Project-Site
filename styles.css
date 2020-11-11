@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: white;
+    padding: 20px;
+}
+
+body {
+    background: #24272E;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    background: white;
+    width: 100%;
+    height: 5%;
+}
+
+header > h1 {
+    color: white;
+    text-align: center;
+    font-family: Asap, sans-serif;
+}
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    text-align:center;
+    width: 200px;
+    color: white;
+    font-size: 46px;
+    padding: 15px 20px;
+    font-family: Asap, sans-serif;
+    position: relative;
+}
+
+
+#user-score {
+    transition: opacity .5s;
+}
+
+#computer-score {
+    transition: opacity .5s;
+}
+
+
+.badge {
+    color: white;
+    font-size: 14px;
+    padding: 2 px 10px;
+    font-family: Asap, sans-serif;
+}
+
+
+#user-label {
+    background: green;
+    position: absolute;
+    top: 30px;
+    left: -15px;
+}
+
+#computer-label {
+    background: red;
+    position: absolute;
+    top: 30px;
+    right: -20px;
+}
+
+.result {
+    font-size: 45px;
+    color: white;
+    transition: all 1s ease;
+
+}
+
+.result > p {
+    text-align: center;
+    font-family: Asap, sans-serif;
+    font-weight: bold;
+    transition: opacity .5s ease;
+
+}
+
+.fade {
+    opacity: 0;
+}
+
+.choices {
+    text-align: center;
+    margin: 50px 0px;
+    transition: opacity .5s;
+}
+
+.choice {
+    display: inline-block;
+    border: 4px solid white;
+    padding: 10px;
+    border-radius: 40%;
+    margin: 0 15px;
+    transition: 1s ease;
+
+}
+
+.choice:hover {
+    background:white;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+#act_text {
+    text-align: center;
+    color: white;
+    font-family: Asap, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+.comp-choice-loss {
+    background: red;
+    transition: all .5s
+}
+
+.comp-choice-win {
+    background: green;
+}
+
+.comp-choice-draw {
+    background: blue;
+    display: inline-block;
+    border: 4px solid white;
+    padding: 10px;
+    border-radius: 40%;
+    margin: 0 15px;
+    transition: 1s ease;
+}
+
+.tab {
+    position: absolute;
+    bottom: 0px;
+    height: 50px;
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    opacity: .1;
+    transition: opacity .5s ease;
+}
+
+.tab button:hover {
+    background-color: #24272E;
+    color: white;
+    visibility: visible;
+}
+
+.tab button:hover a{
+    color: white;
+    transition: font-size .5s ease;
+    text-decoration: underline;
+}
+
+.tab:hover {
+    opacity: 1;
+}
+
+.tab button {
+    display: inline-block;
+    background-color: inherit;
+    color: black;
+    padding: 10px;
+    border: none;
+    outline: none;
+    text-align: middle;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 25%;
+    height: 100%;
+    font-family: Asap, sans-serif;
+    font-size: 15px;
+}
+
+.reset {
+    background-color: #24272E;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: -81px;
+    text-align: center;
+    left: 45%;
+}
+
+.reset button {
+    background-color: inherit;
+    border: none;
+    color: white;
+    font-family: Asap, sans-serif;
+    font-size: 25px;
+    border: 2px solid white;
+    text-align: center;
+    border-radius: 10%;
+    padding: 10px;
+    font-weight: bold;
+    transition: all .5s ease;
+    width: 150px;
+}
+
+.reset button:hover {
+    background-color: white;
+    color:  #24272E;
+}
+
+#container > * {
+    position: absolute;
+    left: 50%;
+}
+
+#container > .action_message {
+    margin-left: -81px;
+}
+
+.stats_dropdown {
+    position: absolute;
+    display: inline-block;
+}
+
+.dropdown_button {
+    background-color: white;
+    border: none;
+}
+
+.dropdown_button img {
+    width:40px;
+    margin-top: 20px;
+    margin-left: 10px;
+    transition: width .5s ease;
+}
+
+.dropdown_button:hover img {
+    width: 45px;
+}
+
+.dropdown_content {
+    display: none;
+    opacity: 0;
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: Asap, sans-serif;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity .5s ease;
+}
+
+.stats_dropdown:hover .dropdown_content {
+    display: block;
+    font-size: 20px;
+}
+
+.visi_class {
+    opacity: 1;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.stats_dropdown a:hover {
+    text-decoration: underline;
+    font-size: 21px;
+    transition: font-size .5s ease;
+
+}
+

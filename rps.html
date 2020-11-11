@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="utf-8">
+        <title>Rock Paper Scissors Game</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class = "stats_dropdown">
+            <button class = "dropdown_button">
+                <img src = "images/menu.png" alt = "">
+            </button>
+            <div class = "dropdown_content">
+                <a href = "rps_stats.html" target = "_blank" id = "stats_link">Session Stats</a>
+            </div>
+        </div>
+        <header>
+            <h1 id = "title">Rock Paper Scissors</h1>
+        </header>
+
+        <div class="score-board">
+            <div id ="user-label" class="badge">user</div>
+            <div id="computer-label" class="badge">comp</div>
+            <span id="user-score">0</span>:<span id="computer-score">0</span>
+        </div>
+
+        <div class="result">
+            <p>Paper covers rock. You win!</p>
+        </div>
+
+        <div class = "choices">
+            <div class="choice" id="r">
+                <img src="images/rock.png" alt="">
+            </div>
+            <div class="choice" id="p">
+                <img src="images/paper.png" alt="">
+            </div>
+            <div class="choice" id="s">
+                <img src="images/scissors.png" alt="">
+            </div>
+        </div>
+
+        <div id = "container">
+            <div class ="action_message">
+                <p id="act_text">Make your move!</p>
+            </div>
+            <div class = "reset">
+                <button id = "resetbutton">Reset Score</button>
+            </div>
+        </div>
+
+        <script src = "behavior.js" charset = "utf-8"></script>
+    </body>
+
+        <div class = "tab">
+            <button class ="tablinks"><a href = "about.html" target = "_blank" class = "projects_link">Projects</a></button>
+            <button class ="tablinks"><a href = "about.html" target = "_blank" class = "about_link">About</a></button>
+            <button class ="tablinks"><a href = "worksinprogress.html" target = "_blank" class = "wip_link">Works In Progress</a></button> 
+        </div>
+</html>
