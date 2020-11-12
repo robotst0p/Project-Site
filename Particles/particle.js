@@ -4,11 +4,13 @@ var body_div = document.getElementById('canvas-container');
 var max_particle_input = document.getElementById('max-particle-input');
 var line_distance_input = document.getElementById('line-distance-input');
 
+
 let particle_array = [];
 let rand_range = [-1,0,1];
 let second_range = [-1,1];
 
 let magnet_flag = false;
+
 let particle_generation_flag = false;
 
 let mouse_x = 0;
@@ -22,12 +24,15 @@ let rand_color = 0;
 let win_height = window.innerHeight;
 let win_width = window.innerWidth;
 
-let max_particle = 10;
+
+let max_particle = 0;
+=======
 let new_particle = 0;
 let current_particle = 0;
 
 let line_distance = 0;
 let line_distance_threshold = 0;
+
 
 const color_array = ["black", "red", "green", "blue", "purple", "yellow", "orange"];
 
@@ -61,9 +66,11 @@ function magnet_unclick(event){
 
 window.addEventListener('load', function() {
     window.requestAnimationFrame(animate);
+  
     for (var i = 0; i <= max_particle; i++) {
         rand_x = Math.floor(Math.random() * canvas.width);
         rand_y = Math.floor(Math.random() * canvas.height);
+      
         x_dir = rand_range[Math.floor(Math.random() * 2)];
         y_dir = rand_range[Math.floor(Math.random() * 2)];
 
@@ -91,6 +98,7 @@ window.addEventListener('load', function() {
     }
 })
 
+
 max_particle_input.addEventListener('change', function () {
     max_particle = max_particle_input.value;
     console.log("change");
@@ -105,6 +113,7 @@ function animate() {
 
     ctx.globalCompositeOperation = 'destination-over';
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 
     ctx.strokeStyle = "black";
     ctx.save();
@@ -141,7 +150,7 @@ function animate() {
             particle_array.push(new_particle);
         }
     }
-   
+ 
     switch (magnet_flag) {
         case true:
             ctx.beginPath();
@@ -159,9 +168,11 @@ function animate() {
                     
                 ctx.beginPath();
                 ctx.strokeStyle = "white";
+
                 if (current_particle.x_pos >= canvas.width || current_particle.y_pos > canvas.height || current_particle.x_pos < 0 || current_particle.y_pos < 0) {
                     rand_x = Math.floor(Math.random() * canvas.width);
                     rand_y = Math.floor(Math.random() * canvas.height);
+                  
                     x_dir = rand_range[Math.floor(Math.random() * 2)]
                     y_dir = rand_range[Math.floor(Math.random()*2)];
         
@@ -194,6 +205,7 @@ function animate() {
                 for (var k = 0; k <= particle_array.length - 1; k++) {
                     line_distance = Math.sqrt((Math.pow((particle_array[k].x_pos - current_particle.x_pos),2) + Math.pow((particle_array[k].y_pos - current_particle.y_pos),2)));
                     if (line_distance < line_distance_threshold) {
+
                         rand_color = Math.floor(Math.random() * color_array.length);
                         ctx.strokeStyle = "orange";
                         ctx.beginPath();
@@ -219,9 +231,11 @@ function animate() {
         
                 ctx.beginPath();
                 ctx.strokeStyle = "white";
+
                 if (current_particle.x_pos >= canvas.width || current_particle.y_pos > canvas.height || current_particle.x_pos < 0 || current_particle.y_pos < 0) {
                     rand_x = Math.floor(Math.random() * canvas.width);
                     rand_y = Math.floor(Math.random() * canvas.height);
+
                     x_dir = rand_range[Math.floor(Math.random() * 2)]
                     y_dir = rand_range[Math.floor(Math.random()* 2)];
         
@@ -250,7 +264,9 @@ function animate() {
         
                 for (var k = 0; k <= particle_array.length - 1; k++) {
                     line_distance = Math.sqrt((Math.pow((particle_array[k].x_pos - current_particle.x_pos),2) + Math.pow((particle_array[k].y_pos - current_particle.y_pos),2)));
+
                     if (line_distance < line_distance_threshold) {
+
                         rand_color = Math.floor(Math.random() * color_array.length);
                         ctx.strokeStyle = "orange";
                         ctx.beginPath();
