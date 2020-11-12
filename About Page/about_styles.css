@@ -180,6 +180,16 @@ a {
     font-size: 18px;
 }
 
+@keyframes widen {
+    from {height: 0}
+    to {height: 100%}
+}
+
+@keyframes fade-away {
+    from {opacity: 1}
+    to {opacity: .3}
+}
+
 .tab {
     display: block;
     justify-content: column;
@@ -193,16 +203,6 @@ a {
     width: 10%;
     opacity: .3;
     transition: opacity .5s ease;
-}
-
-@keyframes widen {
-    from {height: 0}
-    to {height: 100%}
-}
-
-@keyframes fade-away {
-    from {opacity: 1}
-    to {opacity: .3}
 }
 
 .tab button:hover {
@@ -241,7 +241,6 @@ a {
     font-family: Source Code Pro;
     font-size: 20px;
 }
-
 
 .after-buttons {
     margin-top: 15%;

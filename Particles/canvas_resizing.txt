@@ -1,0 +1,9 @@
+canvas.width = win_width;
+canvas.height = win_height;
+
+window.addEventListener("resize", function() {
+    win_height = window.innerHeight;
+    win_width = window.innerWidth;
+    canvas.width = win_width;
+    canvas.height = win_height;
+})

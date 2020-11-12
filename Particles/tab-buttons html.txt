@@ -1,0 +1,2 @@
+  <button class ="tablinks"><a href = "about.html" target = "_blank" class = "about_link">About Page</a></button>
+                <button class ="tablinks"><a href = "https://github.com/robotst0p/Project-Site" target = "_blank" class = "wip_link">GitHub</a></button>

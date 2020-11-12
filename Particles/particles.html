@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="utf-8">
+        <title>Particles</title>
+        <link rel="stylesheet" href="particles.css">
+    </head>
+    <body>
+        <div class = "canvas-container" id = "canvas-cont">
+            <p id = "canvas-title">Particles! See bottom bar to enter parameters.</p>
+            <canvas id="canvas"></canvas>
+            <div class = "tab">
+               
+            <p id = "max-particle-title">Number of Particles</p>
+            <input type = "number" id = "max-particle-input" name = "max-particle-input"> 
+            <p id = "line-distance-title">Line draw distance threshold:</p>
+            <input type = "number" id = "line-distance-input" name = "line-distance-input">
+                
+            </div>
+        </div>
+
+        <script src = "particle.js"></script>
+    </body>
