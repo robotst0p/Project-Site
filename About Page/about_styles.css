@@ -180,6 +180,17 @@ a {
     font-size: 18px;
 }
 
+@keyframes widen {
+    from {height: 0}
+    to {height: 100%}
+}
+
+@keyframes fade-away {
+    from {opacity: 1}
+    to {opacity: .3}
+}
+
+
 .tab {
     display: block;
     justify-content: column;
