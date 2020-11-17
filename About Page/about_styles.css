@@ -16,10 +16,11 @@ header {
 
 body {
     background-image:url('images/coding.gif');
-    background-size: 105%;
+    background-size: 107%;
     height:100%;
     width:100%;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 footer {
@@ -53,7 +54,7 @@ footer {
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
-    animation: 
+    animation:
         typing 3.5s steps(40, end),
         blink-caret .75s step-end infinite;
 }
@@ -66,7 +67,7 @@ footer {
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
-    animation: 
+    animation:
         typing_quicklinks 3.5s steps(40, end),
         blink-caret .75s step-end infinite;
 }
@@ -81,7 +82,7 @@ footer {
     from { width: 0 }
     to { width: 290px;}
   }
-  
+
   /* The typewriter cursor effect */
   @keyframes blink-caret {
     from, to { border-color: transparent }
@@ -96,7 +97,7 @@ footer {
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
-    animation: 
+    animation:
         typing_scroll 3.5s steps(40, end),
         blink-caret .75s step-end infinite;
 }
@@ -190,7 +191,6 @@ a {
     to {opacity: .3}
 }
 
-
 .tab {
     display: block;
     justify-content: column;
@@ -204,16 +204,6 @@ a {
     width: 10%;
     opacity: .3;
     transition: opacity .5s ease;
-}
-
-@keyframes widen {
-    from {height: 0}
-    to {height: 100%}
-}
-
-@keyframes fade-away {
-    from {opacity: 1}
-    to {opacity: .3}
 }
 
 .tab button:hover {
@@ -230,7 +220,7 @@ a {
     color: orange;
     transition: font-size .5s ease;
     text-decoration: underline;
-    
+
 }
 
 .tab:hover {
@@ -268,7 +258,7 @@ a {
     position: relative;
     color: white;
     font-family: Source Code Pro;
-   
+
 
 }
 
@@ -344,7 +334,7 @@ a {
 #rps-link {
     text-decoration: underline;
     color: orange;
-    animation: 
+    animation:
         link-animation 1s step-end infinite;
 }
 
@@ -372,6 +362,59 @@ a {
     border-bottom: .15em solid orange;
 }
 
+.protest-finder-container {
+  margin-top: 30%;
+  text-align: left;
+  margin-left: 13%;
+  width: 30%;
+  font-size: 18px;
+}
+
+.gameoflife-container {
+    margin-top: 30%;
+    text-align: left;
+    margin-left: 13%;
+    width: 30%;
+    font-size: 18px;
+}
+
+#gameoflife-title {
+    font-size: 28px;
+    color: orange;
+    font-weight: bold;
+}
+
+#gameoflife-link {
+    text-decoration: underline;
+    color: orange;
+    animation:
+        link-animation 1s step-end infinite;
+}
+
+#gameoflife-description {
+    margin-top: 3%;
+}
+
+#gameoflife-tech-title {
+    margin-top: 3%;
+}
+
+#gameoflife-tech-list {
+    margin-left: 10%;
+}
+
+#gameoflife-preview-image {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    margin-left: 35%;
+    margin-top: .5%;
+    border-top: .15em solid orange;
+    border-left: .15em solid orange;
+    border-right: .15em solid orange;
+    border-bottom: .15em solid orange;
+}
+
 .winp-container {
     margin-left: auto;
     margin-right: auto;
@@ -381,6 +424,43 @@ a {
     color: white;
     font-family: Source Code Pro;
 
+}
+
+#protest-finder-title{
+    font-size: 28px;
+    color: orange;
+    font-weight: bold;
+}
+
+#protest-finder-link {
+    text-decoration: underline;
+    color: orange;
+    animation:
+        link-animation 1s step-end infinite;
+}
+
+#protest-finder-description {
+    margin-top: 3%;
+}
+
+#protest-finder-tech-title {
+    margin-top: 3%;
+}
+
+#protest-finder-tech-list {
+    margin-left: 10%;
+}
+
+#protest-finder-preview-image {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    margin-left: 35%;
+    margin-top: .5%;
+    border-top: .15em solid orange;
+    border-left: .15em solid orange;
+    border-right: .15em solid orange;
+    border-bottom: .15em solid orange;
 }
 
 .particles-container {
@@ -407,12 +487,12 @@ a {
 #particles-link {
     text-decoration: underline;
     color: orange;
-    animation: 
+    animation:
         link-animation 1s step-end infinite;
 }
 
 @keyframes link-animation {
-    from, to {text-decoration: none} 
+    from, to {text-decoration: none}
     50% {text-decoration: underline;}
 }
 
