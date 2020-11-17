@@ -3,7 +3,7 @@
     <head>
         <meta charset = "utf-8">
         <title>About</title>
-        <link rel = "stylesheet" href = "about_styles.css">
+        <link rel = "stylesheet" href = "About Page/about_styles.css">
     </head>
     <body>
         <div class = "general-info-container" id = "gen-info-cont">
@@ -14,49 +14,84 @@
 
         <div class = "about-container" id = "about-cont">
             <p id = "about-title">What this site is about:</p>
-            <p id = "about-info"> My name is Tyler Meyer and I am a soon to be graduate from the University of Ohio State studying physics. 
-                I love physics, mathematics, programming and most of all: problem-solving. 
-                Physics has always given me interesting and complex problems to solve, and I love pairing this with programming to build visual solutions to these mathematical puzzles. 
+            <p id = "about-info"> My name is Tyler Meyer and I am a soon to be graduate from the University of Ohio State studying physics.
+                I love physics, mathematics, programming and most of all: problem-solving.
+                Physics has always given me interesting and complex problems to solve, and I love pairing this with programming to build visual solutions to these mathematical puzzles.
                 I have a passion for visualizing an idea in my head, creating a design and building it until my idea comes to fruition.
             </p>
-            <p id = "about-info-closing">Using coding to act on this passion gives me a great satisfaction that I have not gotten from any other activity. 
+            <p id = "about-info-closing">Using coding to act on this passion gives me a great satisfaction that I have not gotten from any other activity.
                 I love learning new technologies and the fact that I will never completely master coding as there is always something new to learn and implement.
                 I hope to make a career in this field and further develop this life long passion.
             </p>
             <p id = "about-site">This site will be a place for me to host any projects related to Web Developement or design, and just to experiment. This site was written from scratch, the code can be found on my GitHub linked below.
             </p>
         </div>
-    
+
         <div class = "resume-container" id = "resume-cont">
             <p id = "resume-title">Resume: </p>
             <div>
-                <img id = "resume-image" src = "images/resume.jpg">
+                <img id = "resume-image" src = "About Page/images/resume.jpg">
             </div>
-            
+
             <div id = "contact-info-greeting">
                 <p>You can contact me at:</p>
             </div>
 
             <div id = "email">
-                <p>meyer.1261@buckeyemail.osu.edu</p>
+                <p>meyertyler68@gmail.com</p>
             </div>
         </div>
 
         <div class = "projects-container" id = "projects-cont">
             <p id = "projects-title">Finished Projects:</p>
-            
+
             <div class = "rps-container">
-                <img id = "rps-preview-image" src = "images/rps-preview.jpg">
-                <a id = "rps-link" href = "../RPS/rps.html" target = "_blank">
+                <img id = "rps-preview-image" src = "About Page/images/rps-preview.jpg">
+                <a id = "rps-link" href = "RPS/rps.html" target = "_blank">
                     <p id = "rps-title">Rock Paper Scissors with Stats! (Click for link)</p>
                 </a>
                 <p id =  "rps-description">My first foray into web development, this project introduced me to the world of design on the web.</p>
                 <p id ="rps-tech-title">Tech used:</p>
                 <ul id = "rps-tech-list">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Javascript</li>
-                    <li>Plotly Library</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                  <li>Plotly Library</li>
+                </ul>
+            </div>
+
+            <div class = "protest-finder-container">
+                <img id = "protest-finder-preview-image" src = "Protest Finder/images/preview-image.jpg">
+                <a id = "protest-finder-link" href = "Protest Finder/index.php" target = "_blank">
+                  <p id = "protest-finder-title"> Hackathon Protest-Finder! </p>
+                </a>
+                <p id = "protest-finder-description"> 2020 Ohio State Hackathon project. Built in two days, allows users to enter protests, view a live map of other entered protests and users can click on map markers to pull info relating to the entered protest.
+                                                      There's a lot of work still left to do on this project especially when it comes to visual design, but since it was a hackathon creation it feels right to leave it as it is for now. Backend was handeled using PHP and a MySQL database. The code is a bit
+                                                      rough and unoptimized, as we were rushing to meet a time constraint and doing a lot of learning. Still functional, nonetheless!
+                </p>
+                <p id = "protest-finder-tech-title"> Tech used: </p>
+                <ul id = "protest-finder-tech-list">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                  <li>PHP</li>
+                  <li>MySQL</li>
+                  <li>Google Maps Javascript API</li>
+                  <li>Geocoder API</li>
+                </ul>
+            </div>
+
+            <div class = "gameoflife-container">
+                <img id = "gameoflife-preview-image" src = "Game of Life/images/preview.jpg">
+                <a id = "gameoflife-link" href = "Protest Finder/index.php" target = "_blank">
+                  <p id = "gameoflife-title"> Conway's Game of Life! </p>
+                </a>
+                <p id = "gameoflife-description"> Made in a couple days for a friend that was intersted in cellular automata, I leverage the Godot game engine to create Conway's Game of Life. A little unoptomized, but the code can be found by clicking the title link.
+                </p>
+                <p id = "gameoflife-tech-title"> Tech used: </p>
+                <ul id = "gameoflife-tech-list">
+                  <li>Godot Engine</li>
+                  <li>Godot Script</li>
                 </ul>
             </div>
         </div>
@@ -64,8 +99,8 @@
         <div class = "winp-container">
             <div class = "particles-container">
                 <p id = "winp-title">Works in Progress:</p>
-                <iframe id = "particles-preview-image" src = "../Particles/particles-preview.html"></iframe>
-                <a id = "particles-link" href = "../Particles/particles.html" target = "_blank">
+                <iframe id = "particles-preview-image" src = "Particles/particles-preview.html"></iframe>
+                <a id = "particles-link" href = "Particles/particles.html" target = "_blank">
                     <p id = "particles-title">Particles! (Click for link)</p>
                 </a>
                 <p id = "particles-description">Inspired by the Ohio State Hackathon webpage, I aimed to recreate a system in which particles travel along the page and connect with eachother...but this time, with physics! Click to magnetize!</p>
@@ -82,7 +117,7 @@
         <div class = "github-container">
             <p id = "github-title">The code for this site and all projects can be found here:</p>
             <a id = "github-link" href = "https://github.com/robotst0p/Project-Site" target = "_blank">https://github.com/robotst0p/Project-Site</a>
-        </div> 
+        </div>
 
     </body>
 
@@ -100,11 +135,11 @@
         </div>
 
         <div class = "after-buttons" id = "winp-link">
-            <button><a href = "#winp-title" target = "_blank" class = "wip_link">Works In Progress</a></button>
+            <button><a href = "#winp-title" class = "wip_link">Works In Progress</a></button>
         </div>
 
         <div class = "after-buttons" id = "github-nav-link">
-            <button><a href = "#github-title" target = "_blank">GitHub</a></button>
+            <button><a href = "#github-title">GitHub</a></button>
         </div>
     </nav>
 
