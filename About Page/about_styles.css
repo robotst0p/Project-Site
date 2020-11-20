@@ -1,369 +1,406 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 header {
-    background: white;
-    padding: 20px;
-    font-family: Asap, sans-serif;
-    display: inline-flexbox;
-
+  background: white;
+  padding: 20px;
+  font-family: Asap, sans-serif;
+  display: inline-flexbox;
 }
 
 body {
-    background-image:url('images/coding.gif');
-    background-size: 107%;
-    height:100%;
-    width:100%;
-    background-attachment: fixed;
-    overflow-x: hidden;
+  background-image: url("images/coding.gif");
+  background-size: 107%;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 footer {
-    position: absolute;
-    bottom: 0px;
-    background: white;
-    width: 100%;
-    height: 5%;
+  position: absolute;
+  bottom: 0px;
+  background: white;
+  width: 100%;
+  height: 5%;
 }
 
 #welcome {
-    margin-top: 25%;
-    font-size: 24px;
+  margin-top: 25%;
+  font-size: 24px;
 }
 
 #scroll {
-    font-size: 24px;
-    margin-top: 2%;
+  font-size: 24px;
+  margin-top: 2%;
 }
 
 #quicklinks-prompt {
-    font-size: 24px;
-    margin-top: 2%;
+  font-size: 24px;
+  margin-top: 2%;
 }
 
 .typewriter_welcome {
-    font: Source Code Pro;
-    color: white;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation:
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
+  font: Source Code Pro;
+  color: white;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 .typewriter_quicklinks {
-    font: Source Code Pro;
-    color: white;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation:
-        typing_quicklinks 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
+  font: Source Code Pro;
+  color: white;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing_quicklinks 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing_quicklinks {
-    from {width: 0}
-    to {width: 340px;}
+  from {
+    width: 0;
+  }
+  to {
+    width: 340px;
+  }
 }
 
 /* The typing effect */
 @keyframes typing {
-    from { width: 0 }
-    to { width: 290px;}
+  from {
+    width: 0;
   }
-
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+  to {
+    width: 290px;
   }
+}
 
-  .typewriter_scroll {
-    font: Source Code Pro;
-    color: white;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation:
-        typing_scroll 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.typewriter_scroll {
+  font: Source Code Pro;
+  color: white;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing_scroll 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing_scroll {
-    from { width: 0 }
-    to { width: 490px;}
+  from {
+    width: 0;
   }
+  to {
+    width: 490px;
+  }
+}
 
 #title {
-    color: black;
-    font-family: Asap, sans-serif;
-    text-align: left;
-    float: left;
+  color: black;
+  font-family: Asap, sans-serif;
+  text-align: left;
+  float: left;
 }
 
 #resume {
-    margin-left: 60%;
+  margin-left: 60%;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .general-info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    align-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: flex-start;
 }
 .general-info {
-    padding: 10px;
-    color: black;
-    font-family: Asap, sans-serif;
-    margin-top: 20px;
-    width: 50%;
-    margin-left: 10px;
-
+  padding: 10px;
+  color: black;
+  font-family: Asap, sans-serif;
+  margin-top: 20px;
+  width: 50%;
+  margin-left: 10px;
 }
 
 #info {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #closing-info {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #greeting {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .about-container {
-    width: 70%;
-    margin-left: 13%;
-    margin-right: auto;
-    display: block;
-    text-align: left;
-    margin-top: 25%;
-    color: white;
-    font-family: Source Code Pro;
+  width: 70%;
+  margin-left: 13%;
+  margin-right: auto;
+  display: block;
+  text-align: left;
+  margin-top: 25%;
+  color: white;
+  font-family: Source Code Pro;
 }
 
 #about-title {
-    font-size: 34px;
+  font-size: 34px;
 }
 
 #about-info {
-    margin-top: 3%;
-    font-size: 18px;
+  margin-top: 3%;
+  font-size: 18px;
 }
 
 #about-info-closing {
-    margin-top: 3%;
-    font-size: 18px;
+  margin-top: 3%;
+  font-size: 18px;
 }
 
 #about-site {
-    margin-top: 3%;
-    font-size: 18px;
+  margin-top: 3%;
+  font-size: 18px;
 }
 
 @keyframes widen {
-    from {height: 0}
-    to {height: 100%}
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
 }
 
 @keyframes fade-away {
-    from {opacity: 1}
-    to {opacity: .3}
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
 }
 
 .tab {
-    display: block;
-    justify-content: column;
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    height: 100%;
-    background-color: #bb4158;
-    box-sizing: border-box;
-    overflow: hidden;
-    width: 10%;
-    opacity: .3;
-    transition: opacity .5s ease;
+  display: block;
+  justify-content: column;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  background-color: #bb4158;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 10%;
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
 }
 
 .tab button:hover {
-    background-color: #34225e;
-    color: white;
-    visibility: visible;
-    border-bottom: .2em solid orange;
-    animation:
-        blink-caret .75s step-end infinite;
-
+  background-color: #34225e;
+  color: white;
+  visibility: visible;
+  border-bottom: 0.2em solid orange;
+  animation: blink-caret 0.75s step-end infinite;
 }
 
-.tab button:hover a{
-    color: orange;
-    transition: font-size .5s ease;
-    text-decoration: underline;
-
+.tab button:hover a {
+  color: orange;
+  transition: font-size 0.5s ease;
+  text-decoration: underline;
 }
 
 .tab:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .tab button {
-    justify-content: column;
-    background-color: inherit;
-    color: black;
-    padding: 10px;
-    border: none;
-    outline: none;
-    text-align: middle;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
-    height: 100%;
-    font-family: Source Code Pro;
-    font-size: 20px;
+  justify-content: column;
+  background-color: inherit;
+  color: black;
+  padding: 10px;
+  border: none;
+  outline: none;
+  text-align: middle;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+  font-family: Source Code Pro;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .after-buttons {
-    margin-top: 15%;
+  margin-top: 15%;
 }
 
 .contact-info-container {
-    display: flex;
+  display: flex;
 }
 
 .resume-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    color: white;
-    font-family: Source Code Pro;
-
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  color: white;
+  font-family: Source Code Pro;
 }
 
 #resume-title {
-    margin-top: 40%;
-    text-align: center;
-    font-size: 40px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-right: .15em solid orange;
-    letter-spacing: .15em;
-    animation:
-        blink-caret .75s step-end infinite;
+  margin-top: 40%;
+  text-align: center;
+  font-size: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-right: 0.15em solid orange;
+  letter-spacing: 0.15em;
+  animation: blink-caret 0.75s step-end infinite;
 }
 
 #contact-info-greeting {
-    font-size: 24px;
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    letter-spacing: .15em;
+  font-size: 24px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.15em;
 }
 
 #email {
-    font-size: 24px;
-    margin-left: auto;
-    margin-right: auto;
-    letter-spacing: .15em;
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.15em;
 }
 
 #resume-image {
-    margin-top: 2%;
-    width: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    border: 4px orange solid;
+  margin-top: 2%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 4px orange solid;
+  border-bottom: none;
+}
+
+#resume-image2 {
+  margin-top: -1%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 4px orange solid;
+  border-bottom: none;
+  border-top: none;
+}
+
+#resume-image3 {
+  margin-top: 0%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 4px orange solid;
+  border-top: none;
 }
 
 .projects-container {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    text-align: center;
-    margin-top: 25%;
-    color: white;
-    font-family: Source Code Pro;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  margin-top: 25%;
+  color: white;
+  font-family: Source Code Pro;
 }
 
 #projects-title {
-    margin-left: 11%;
-    margin-right: auto;
-    text-align: left;
-    font-size: 34px;
+  margin-left: 11%;
+  margin-right: auto;
+  text-align: left;
+  font-size: 34px;
 }
 
 .rps-container {
-    margin-top: 2%;
-    text-align: left;
-    margin-left: 13%;
-    width: 30%;
-    font-size: 18px;
+  margin-top: 2%;
+  text-align: left;
+  margin-left: 13%;
+  width: 30%;
+  font-size: 18px;
 }
 
 #rps-title {
-    font-size: 28px;
-    color: orange;
-    font-weight: bold;
+  font-size: 28px;
+  color: orange;
+  font-weight: bold;
 }
 
 #rps-link {
-    text-decoration: underline;
-    color: orange;
-    animation:
-        link-animation 1s step-end infinite;
+  text-decoration: underline;
+  color: orange;
+  animation: link-animation 1s step-end infinite;
 }
 
 #rps-description {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 #rps-tech-title {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 #rps-tech-list {
-    margin-left: 10%;
+  margin-left: 10%;
 }
 
 #rps-preview-image {
-    position: absolute;
-    width: 40%;
-    height: 40%;
-    margin-left: 35%;
-    margin-top: .5%;
-    border-top: .15em solid orange;
-    border-left: .15em solid orange;
-    border-right: .15em solid orange;
-    border-bottom: .15em solid orange;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  margin-left: 35%;
+  margin-top: 0.5%;
+  border-top: 0.15em solid orange;
+  border-left: 0.15em solid orange;
+  border-right: 0.15em solid orange;
+  border-bottom: 0.15em solid orange;
 }
 
 .protest-finder-container {
-  margin-top: 30%;
+  margin-top: 15%;
   text-align: left;
   margin-left: 13%;
   width: 30%;
@@ -371,178 +408,178 @@ a {
 }
 
 .gameoflife-container {
-    margin-top: 30%;
-    text-align: left;
-    margin-left: 13%;
-    width: 30%;
-    font-size: 18px;
+  margin-top: 15%;
+  text-align: left;
+  margin-left: 13%;
+  width: 30%;
+  font-size: 18px;
 }
 
 #gameoflife-title {
-    font-size: 28px;
-    color: orange;
-    font-weight: bold;
+  font-size: 28px;
+  color: orange;
+  font-weight: bold;
 }
 
 #gameoflife-link {
-    text-decoration: underline;
-    color: orange;
-    animation:
-        link-animation 1s step-end infinite;
+  text-decoration: underline;
+  color: orange;
+  animation: link-animation 1s step-end infinite;
 }
 
 #gameoflife-description {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 #gameoflife-tech-title {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 #gameoflife-tech-list {
-    margin-left: 10%;
+  margin-left: 10%;
 }
 
 #gameoflife-preview-image {
-    position: absolute;
-    width: 40%;
-    height: 40%;
-    margin-left: 35%;
-    margin-top: .5%;
-    border-top: .15em solid orange;
-    border-left: .15em solid orange;
-    border-right: .15em solid orange;
-    border-bottom: .15em solid orange;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  margin-left: 35%;
+  margin-top: 0.5%;
+  border-top: 0.15em solid orange;
+  border-left: 0.15em solid orange;
+  border-right: 0.15em solid orange;
+  border-bottom: 0.15em solid orange;
 }
 
 .winp-container {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    text-align: center;
-    margin-top: 25%;
-    color: white;
-    font-family: Source Code Pro;
-
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  margin-top: 25%;
+  color: white;
+  font-family: Source Code Pro;
 }
 
-#protest-finder-title{
-    font-size: 28px;
-    color: orange;
-    font-weight: bold;
+#protest-finder-title {
+  font-size: 28px;
+  color: orange;
+  font-weight: bold;
 }
 
 #protest-finder-link {
-    text-decoration: underline;
-    color: orange;
-    animation:
-        link-animation 1s step-end infinite;
+  text-decoration: underline;
+  color: orange;
+  animation: link-animation 1s step-end infinite;
 }
 
 #protest-finder-description {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 #protest-finder-tech-title {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 #protest-finder-tech-list {
-    margin-left: 10%;
+  margin-left: 10%;
 }
 
 #protest-finder-preview-image {
-    position: absolute;
-    width: 40%;
-    height: 40%;
-    margin-left: 35%;
-    margin-top: .5%;
-    border-top: .15em solid orange;
-    border-left: .15em solid orange;
-    border-right: .15em solid orange;
-    border-bottom: .15em solid orange;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  margin-left: 35%;
+  margin-top: 0.5%;
+  border-top: 0.15em solid orange;
+  border-left: 0.15em solid orange;
+  border-right: 0.15em solid orange;
+  border-bottom: 0.15em solid orange;
 }
 
 .particles-container {
-    margin-top: 2%;
-    text-align: left;
-    margin-left: 13%;
-    width: 30%;
-    font-size: 18px;
+  margin-top: 2%;
+  text-align: left;
+  margin-left: 13%;
+  width: 30%;
+  font-size: 18px;
 }
 
 #winp-title {
-    margin-left: -6%;
-    text-align: left;
-    font-size: 34px;
+  margin-left: -6%;
+  text-align: left;
+  font-size: 34px;
 }
 
 #particles-title {
-    font-size: 28px;
-    color: orange;
-    font-weight: bold;
-    margin-top: 7%;
+  font-size: 28px;
+  color: orange;
+  font-weight: bold;
+  margin-top: 7%;
 }
 
 #particles-link {
-    text-decoration: underline;
-    color: orange;
-    animation:
-        link-animation 1s step-end infinite;
+  text-decoration: underline;
+  color: orange;
+  animation: link-animation 1s step-end infinite;
 }
 
 @keyframes link-animation {
-    from, to {text-decoration: none}
-    50% {text-decoration: underline;}
+  from,
+  to {
+    text-decoration: none;
+  }
+  50% {
+    text-decoration: underline;
+  }
 }
 
 #particles-description {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 #particles-tech-title {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 #particles-tech-list {
-    margin-left: 10%;
+  margin-left: 10%;
 }
 
 #particles-preview-image {
-    position: absolute;
-    width: 40%;
-    height: 40%;
-    margin-left: 35%;
-    margin-top: 2.5%;
-    border-top: .15em solid orange;
-    border-left: .15em solid orange;
-    border-right: .15em solid orange;
-    border-bottom: .15em solid orange;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  margin-left: 35%;
+  margin-top: 2.5%;
+  border-top: 0.15em solid orange;
+  border-left: 0.15em solid orange;
+  border-right: 0.15em solid orange;
+  border-bottom: 0.15em solid orange;
 }
 
 .github-container {
-    color: white;
-    font-family: Source Code Pro;
-    margin-top: 25%;
-    text-align: center;
-    margin-left: 13%;
-    margin-right: auto;
-    width: 30%;
-    font-size: 18px;
-    text-align: left;
+  color: white;
+  font-family: Source Code Pro;
+  margin-top: 25%;
+  text-align: center;
+  margin-left: 13%;
+  margin-right: auto;
+  width: 30%;
+  font-size: 18px;
+  text-align: left;
 }
 
 #github-title {
-    margin-left: -6%;
-    font-size: 34px;
-
+  margin-left: -6%;
+  font-size: 34px;
 }
 
 #github-link {
-    color: orange;
-    text-decoration: underline;
-    margin-left: -1.8%;
-    margin-top: 2%;
-    position: absolute;
-    font-size: 28px;
+  color: orange;
+  text-decoration: underline;
+  margin-left: -1.8%;
+  margin-top: 2%;
+  position: absolute;
+  font-size: 28px;
 }
