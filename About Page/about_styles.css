@@ -324,18 +324,6 @@ a {
   margin-right: auto;
   width: 50%;
   border: 4px orange solid;
-  border-bottom: none;
-  border-top: none;
-}
-
-#resume-image3 {
-  margin-top: 0%;
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  border: 4px orange solid;
   border-top: none;
 }
 
