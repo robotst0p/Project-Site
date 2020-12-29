@@ -261,5 +261,5 @@ function pass_data(particle_array) {
 
     console.log(gol_form_button);
     
-    // gol_form_button.click();
+    gol_form_button.click();
 }
