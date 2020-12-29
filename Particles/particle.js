@@ -3,13 +3,16 @@ var ctx = canvas.getContext('2d');
 var body_div = document.getElementById('canvas-container');
 var max_particle_input = document.getElementById('max-particle-input');
 var line_distance_input = document.getElementById('line-distance-input');
+var gol_form_button = document.getElementById('submit-button');
+
+var url = window.location.href;
 
 var particle_array = [];
 var rand_range = [-1,0,1];
 var second_range = [-1,1];
 
 var magnet_flag = false;
-
+var active_session = false;
 
 var mouse_x = 0;
 var mouse_y = 0;
@@ -163,6 +166,8 @@ function particle_generator(start, end) {
 
         particle_array.push(new_particle);
     }
+
+    pass_data(particle_array);
 }
 
 function particle_mover(speed) {
@@ -242,4 +247,19 @@ function draw_line(current_particle) {
     }
 }
 
+function pass_data(particle_array) {
+    var length = particle_array.length;
+    var rand_particle = Math.floor(Math.random() * length);
+    var select_particle = particle_array[rand_particle];
+    var particle_x = select_particle.x_pos;
+    var particle_y = select_particle.y_pos;
+    var x_coord = document.getElementById('x_coord');
+    var y_coord = document.getElementById('y_coord');
 
+    x_coord.value = particle_x;
+    y_coord.value = particle_y;
+
+    console.log(gol_form_button);
+    
+    // gol_form_button.click();
+}
