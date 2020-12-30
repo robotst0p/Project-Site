@@ -1,0 +1,14 @@
+  <div id = "greeting">
+                    <p> What this site is about:  </p>
+                </div>
+                <div id = "info"><p id = "info"> My name is Tyler Meyer and I am a soon to be graduate from the University of Ohio State studying physics. 
+                    I love physics, mathematics, programming and most of all: problem-solving. 
+                    Physics has always given me interesting and complex problems to solve, and I love pairing this with programming to build visual solutions to these mathematical puzzles. 
+                    I have a passion for visualizing an idea in my head, creating a design and building it until my idea comes to fruition.
+                </p>
+                </div>
+                <div>
+                    <p id = "closing-info">Using coding to act on this passion gives me a great satisfaction that I have not gotten from any other activity. 
+                        I love learning new technologies and the fact that I will never completely master coding as there is always something new to learn and implement.
+                        I hope to make a career in this field and further develop this life long passion.
+                    </p>

@@ -1,15 +1,26 @@
+var script = document.createElement('script');
+script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
+
+
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
 var body_div = document.getElementById('canvas-container');
 var max_particle_input = document.getElementById('max-particle-input');
 var line_distance_input = document.getElementById('line-distance-input');
+var gol_form = document.getElementById('gol_form');
+var x_coord = document.getElementById('xcoord');
+var y_coord = document.getElementById('ycoord');
+var submit_btn = document.getElementById('btnsubmit');
+var url = window.location.href;
 
 var particle_array = [];
 var rand_range = [-1,0,1];
 var second_range = [-1,1];
 
 var magnet_flag = false;
-
+var active_session = false;
 
 var mouse_x = 0;
 var mouse_y = 0;
@@ -85,6 +96,8 @@ window.addEventListener('load', function() {
     window.requestAnimationFrame(animate);
 
     particle_generator(0, max_particle);
+
+    checkFirstVisit(particle_array);
 })
 
 max_particle_input.addEventListener('change', function () {
@@ -242,4 +255,26 @@ function draw_line(current_particle) {
     }
 }
 
+function checkFirstVisit(particle_array) {
+    if(document.cookie.indexOf('mycookie')==-1) {
+      // cookie doesn't exist, create it now
+      document.cookie = 'mycookie=1';
+      pass_data(particle_array);
+    }
+    else {
+      // not first visit, don't repass data
+    }
+  }
 
+function pass_data(particle_array) {
+    var length = particle_array.length;
+    var rand_particle = Math.floor(Math.random() * length);
+    var select_particle = particle_array[rand_particle];
+    var particle_x = select_particle.x_pos;
+    var particle_y = select_particle.y_pos;
+
+    x_coord.value = parseInt(particle_x,10);
+    y_coord.value = parseInt(particle_y,10);
+
+    submit_btn.click();
+}
