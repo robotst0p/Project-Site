@@ -1,9 +1,3 @@
-var script = document.createElement('script');
-script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
-script.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(script);
-
-
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
 var body_div = document.getElementById('canvas-container');
@@ -13,7 +7,6 @@ var gol_form = document.getElementById('gol_form');
 var x_coord = document.getElementById('xcoord');
 var y_coord = document.getElementById('ycoord');
 var submit_btn = document.getElementById('btnsubmit');
-var url = window.location.href;
 
 var particle_array = [];
 var rand_range = [-1,0,1];
@@ -63,24 +56,29 @@ class Particle {
     }
 }
 
+//detecting when a user is trying to magnetize particles
 canvas.onmousedown = magnet_click;
 canvas.onmouseup = magnet_unclick;
 
+//tracks the users mouse position on screen
 canvas.addEventListener("mousemove", function(event) {
     mouse_x = getMousePos(event).x;
     mouse_y = getMousePos(event).y;
 })
 
+//flags to indicate user is magnetizing 
 function magnet_click(event) {
     magnet_flag = true;
     mouse_x = getMousePos(event).x;
     mouse_y = getMousePos(event).y;
 }
 
+//unmagnetizing when the user stops clicking
 function magnet_unclick(event) {
     magnet_flag = false;
 }
 
+//calculates the users mouse position within the canvas 
 function getMousePos(event) {
     var rect = canvas.getBoundingClientRect(), 
         scaleX = canvas.width / rect.width,    
@@ -92,6 +90,7 @@ function getMousePos(event) {
     }
 }
 
+//onload, the particles will generate and the code will detect whether or not it is the users first time on the site for particle data collection
 window.addEventListener('load', function() {
     window.requestAnimationFrame(animate);
 
@@ -100,16 +99,19 @@ window.addEventListener('load', function() {
     checkFirstVisit(particle_array);
 })
 
+//event listener to detect user changes in number of particles desired on screen
 max_particle_input.addEventListener('change', function () {
     max_particle = max_particle_input.value;
     console.log("change");
     particle_array = [];
 })
 
+//event listener to detect user changes to the desired distance between particles for line drawing
 line_distance_input.addEventListener('change', function() {
     line_distance_threshold = line_distance_input.value;
 })
 
+//function responsible for drawing all frames of the animation on the canvas
 function animate() {
 
     ctx.globalCompositeOperation = 'destination-over';
@@ -121,10 +123,12 @@ function animate() {
     canvas.width = win_width;
     canvas.height = win_height;
 
+    //this if test is used to account for user changes in number of particles between animation frames
     if (particle_array.length < max_particle) {
         particle_generator(particle_array.length, max_particle);
     }
    
+    //when the magnet flag is true, a blue arc is drawn at the user position and the speed of particles traveling is lowered
     switch (magnet_flag) {
         case true:
             var grav_constant = 2;
@@ -139,6 +143,7 @@ function animate() {
             particle_mover(speed);
             break;
         
+        //when the user is not magnetizing, the speed of the traveling particles is higher
         case false:
             speed = 1;
            
@@ -148,13 +153,16 @@ function animate() {
     window.requestAnimationFrame(animate);
 }
 
+//function responsible for generating the particles
 function particle_generator(start, end) {
     for (var i = start; i <= end; i++) {
+        //randomizing the x and y positions of the particles and the directions the particles will be traveling
         rand_x = Math.floor(Math.random() * canvas.width);
         rand_y = Math.floor(Math.random() * canvas.height);
         x_dir = rand_range[Math.floor(Math.random() * 2)];
         y_dir = rand_range[Math.floor(Math.random() * 2)];
 
+        //we don't want any stationary particles, so if the x velocity is 0 this code makes sure the y velocity wont be zero as well
         switch (x_dir) {
             case 0:
                 y_dir = second_range[Math.floor(Math.random() * 2)];
@@ -172,8 +180,10 @@ function particle_generator(start, end) {
         ctx.closePath();
         ctx.stroke();
 
+        //constructs a particle with the new randomized values
         new_particle = new Particle(rand_x, rand_y, x_dir, y_dir);
 
+        //passes the constructed particles to an array of particles
         particle_array.push(new_particle);
     }
 }
