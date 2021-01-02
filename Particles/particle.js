@@ -128,12 +128,12 @@ function animate() {
         particle_generator(particle_array.length, max_particle);
     }
    
-    //when the magnet flag is true, a blue arc is drawn at the user position and the speed of particles traveling is lowered
+    //when the magnet flag is true, a yellow arc is drawn at the user position and the speed of particles traveling is lowered
     switch (magnet_flag) {
         case true:
             var grav_constant = 2;
             ctx.beginPath();
-            ctx.strokeStyle = "blue";
+            ctx.strokeStyle = "yellow";
             ctx.arc(mouse_x,mouse_y, 12, 0, Math.PI*2, true);
             ctx.closePath();
             ctx.stroke();
