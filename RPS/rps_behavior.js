@@ -34,27 +34,32 @@ const stats_link = document.getElementById("stats_link");
 
 const color_list = ["red", "blue", "purple", "yellow", "orange", "pink"];
 
+//randomizes the color of the title text
 setInterval(function() {
     var rand_color = Math.floor((Math.random() * 6));
     title_heading.style.color = color_list[rand_color];
 }, 500)
 
-//on-click event handlers
+//on-click event handlers for each of the moves
+//rock
 rock_div.addEventListener('click', function() {
     game("r");
     rock_games++;
 })
 
+//paper
 paper_div.addEventListener('click', function() {
     game("p");
     paper_games++;
 })
 
+//scissors
 scissor_div.addEventListener('click', function() {
     game("s");
     scissor_games++;
 })
 
+//reset button
 reset_button.addEventListener("click", function() {
     reset_score();
 })
@@ -71,6 +76,7 @@ dropdown_button.addEventListener("mouseenter", function(){
     }, 200)
 })
 
+//code that closes dropdown menu when user mouse leaves the menu
 dropdown_button.addEventListener("mouseleave", function() {
     dropbuttonflag = 0;
     setTimeout(function() {
@@ -82,10 +88,12 @@ dropdown_button.addEventListener("mouseleave", function() {
     }, 200)
 })
 
+//when the mouse enters the dropdown region, dropcontentflag is set to 1 keeping the menu open
 dropdown_content.addEventListener("mouseenter", function() {
     dropcontentflag = 1;
 })
 
+//when the mouse leaves, the dropcontentflag is set to 0 closing the menu
 dropdown_content.addEventListener("mouseleave", function() {
     dropcontentflag = 0;
     setTimeout(function() {
@@ -97,7 +105,7 @@ dropdown_content.addEventListener("mouseleave", function() {
     }, 200)
 })
 
-//event handler for stats array storage
+//event handler for sessions stats 
 
 stats_link.addEventListener("click", function() {
     sessionStorage.setItem("userScore_array", JSON.stringify(userScore_array));
@@ -110,6 +118,8 @@ stats_link.addEventListener("click", function() {
     sessionStorage.setItem("game_total", game_total);
 })
 
+//function responsible for setting the computers move
+//takes users move as parameter and passes it to game_result along with the computers move
 function game(move) {
     var moves = ["r", "p", "s"];
     var comp_index = Math.floor(Math.random() * 3);
@@ -117,6 +127,7 @@ function game(move) {
     game_result(move,comp_move);
 }
 
+//this function takes in both the users move and the computers move and determines the result of the game
 function game_result(move, comp_move){
     var move_combo = move + comp_move;
     switch(move_combo){
@@ -174,6 +185,7 @@ function game_result(move, comp_move){
 
 }
 
+//this function is responsible for updating the sessions win and loss stats of the user
 function update_stats(move) {
     switch(move) {
         case "r":
@@ -188,6 +200,7 @@ function update_stats(move) {
     }
 }
 
+//this functions keeps track of the individual move win statistics for the user in each session
 function move_wins(move){
     switch (move) {
         case "r":
@@ -202,6 +215,7 @@ function move_wins(move){
     }
 }
 
+//this function handles the win event
 function win(message){
     userScore++;
     game_total++;
@@ -211,6 +225,7 @@ function win(message){
     sessionStorage.setItem("userScore", userScore);
 }
 
+//this functions handles the lose event
 function lose(message){
     computerScore++;
     game_total++;
@@ -220,12 +235,14 @@ function lose(message){
     sessionStorage.setItem("computerScore", computerScore);
 }
 
+//this function handles the draw event
 function draw(message){
     game_total++;
     fade_change(result_div, message);
     userScore_array.push(userScore);
 }
 
+//this function is creates a fade out animation for onscreen elements
 function fade_change(element, message) {
     element.classList.add("fade");
     setTimeout(function(){
@@ -234,6 +251,7 @@ function fade_change(element, message) {
     }, 500)
 }
 
+//this function handles the animation for the computers move choice
 function comp_animation(comp_move, condition){
     var element = ""
     switch(comp_move){
@@ -278,6 +296,7 @@ function comp_animation(comp_move, condition){
     }
 }
 
+//this function handles resetting the score for the user session
 function reset_score() {
     userScore = 0;
     computerScore = 0;

@@ -33,6 +33,7 @@ var rock_rate_y = [];
 var paper_rate_y = [];
 var scissor_rate_y = [];
 
+//when the mouse enters the dropdown button, the dropbuttonflag is set to 1 to keep the menu open until the mouse leaves
 dropdown_button.addEventListener("mouseenter", function(){
     dropbuttonflag = 1;
     console.log("dropdown entered");
@@ -45,6 +46,7 @@ dropdown_button.addEventListener("mouseenter", function(){
     }, 200)
 })
 
+//when the mouse leaves the dropdown menu/button region, dropbuttonflag is set to 0 and the menu closes
 dropdown_button.addEventListener("mouseleave", function() {
     dropbuttonflag = 0;
     setTimeout(function() {
@@ -56,10 +58,12 @@ dropdown_button.addEventListener("mouseleave", function() {
     }, 200)
 })
 
+//sets dropcontentflag to 1 when the mouse enters the dropdown menu content
 dropdown_content.addEventListener("mouseenter", function() {
     dropcontentflag = 1;
 })
 
+//sets the dropcontentflag to 0 when the mouse exits the dropdown menu content and closes the menu
 dropdown_content.addEventListener("mouseleave", function() {
     dropcontentflag = 0;
     setTimeout(function() {
