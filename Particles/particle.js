@@ -157,8 +157,8 @@ function animate() {
 function particle_generator(start, end) {
     for (var i = start; i <= end; i++) {
         //randomizing the x and y positions of the particles and the directions the particles will be traveling
-        rand_x = Math.floor(Math.random() * canvas.width);
-        rand_y = Math.floor(Math.random() * canvas.height);
+        rand_x = Math.floor(Math.random() * win_width);
+        rand_y = Math.floor(Math.random() * win_height);
         x_dir = rand_range[Math.floor(Math.random() * 2)];
         y_dir = rand_range[Math.floor(Math.random() * 2)];
 
@@ -188,10 +188,13 @@ function particle_generator(start, end) {
     }
 }
 
+//function responsible for moving the particles
 function particle_mover(speed) {
     for (var i = 0; i <= particle_array.length - 1; i++) {
+        //code decides which particle we are currently moving
         current_particle = particle_array[i];
 
+        //if the magnet flag is true, the x and y directions of the particle is altered to travel towards the mouse cursor position
         switch (magnet_flag){
             case true:
                 x_dir = mouse_x - current_particle.x_pos;
@@ -199,17 +202,20 @@ function particle_mover(speed) {
 
                 grav_radius = Math.sqrt(Math.pow(x_dir,2) + Math.pow(y_dir,2));
 
-                particle_array[i].x_pos += x_dir * speed;
-                particle_array[i].y_pos += y_dir * speed;
+                current_particle.x_pos += x_dir * speed;
+                current_particle.y_pos += y_dir * speed;
             
             case false: 
-                particle_array[i].x_pos += particle_array[i].init_x_dir * speed;
-                particle_array[i].y_pos += particle_array[i].init_y_dir * speed;
+                //if there is no magnetism, the particle will simply be propogated by adding its original direction to the particles current
+                //x and y positions each frame
+                current_particle.x_pos += current_particle.init_x_dir * speed;
+                current_particle.y_pos += current_particle.init_y_dir * speed;
         }
 
         ctx.beginPath();
         ctx.strokeStyle = "white";
         
+        //particle is passed to this function every frame to check for out of bounds particles
         generate_posdir(current_particle, i);
 
         ctx.closePath();
@@ -219,14 +225,18 @@ function particle_mover(speed) {
     }
 }
 
+//function responsible for randomly relocating particles if they travel out of bounds
 function generate_posdir(current_particle, index) {
+    //test to see if the particle is out of the canvas
     if (current_particle.x_pos >= win_width || current_particle.y_pos > win_height || current_particle.x_pos < 0 || current_particle.y_pos < 0) {
+        //randomizing x and y positions
         rand_x = Math.floor(Math.random() * win_width);
         rand_y = Math.floor(Math.random() * win_height);
 
         x_dir = rand_range[Math.floor(Math.random() * 2)];
         y_dir = rand_range[Math.floor(Math.random()* 2)];
 
+        //test like before to make sure no particles are stationary
         switch (x_dir) {
             case 0:
                 y_dir = second_range[Math.floor(Math.random() * 2)];
@@ -238,6 +248,7 @@ function generate_posdir(current_particle, index) {
                 break;
         }
 
+        //setting the positions and directions with the given index
         particle_array[index].x_pos = rand_x;
         particle_array[index].y_pos = rand_y;
         
@@ -246,18 +257,23 @@ function generate_posdir(current_particle, index) {
         ctx.arc(rand_x,rand_y, 2, 0, Math.PI*2, true);
     }
     else {
+        //if the particle is not out of bounds, move it like normal
         ctx.arc(particle_array[index].x_pos, particle_array[index].y_pos, 2, 0, Math.PI*2, true);
     }
 }
 
+//this function is responsible for detecting whether particles fall within line drawing distance and drawing the line
 function draw_line(current_particle) {
     for (var k = 0; k <= particle_array.length - 1; k++) {
+        //using the distance formula to calculate the line distance
         line_distance = Math.sqrt((Math.pow((particle_array[k].x_pos - current_particle.x_pos),2) + Math.pow((particle_array[k].y_pos - current_particle.y_pos),2)));
+        //testing the current particle against all other particles to see if they are within range
         if (line_distance < line_distance_threshold) {
             rand_color = Math.floor(Math.random() * color_array.length);
             ctx.strokeStyle = "orange";
             ctx.beginPath();
             ctx.moveTo(current_particle.x_pos, current_particle.y_pos);
+            //drawing the line
             ctx.lineTo(particle_array[k].x_pos, particle_array[k].y_pos);
             ctx.closePath();
             ctx.stroke();
@@ -265,6 +281,9 @@ function draw_line(current_particle) {
     }
 }
 
+//this function is responsible for checking to see if this is the users first visit to the site
+//if it is, data is passed for generative art project
+//dont want database to be spammed with entries if the user is refreshing the page
 function checkFirstVisit(particle_array) {
     if(document.cookie.indexOf('mycookie')==-1) {
       // cookie doesn't exist, create it now
@@ -276,6 +295,7 @@ function checkFirstVisit(particle_array) {
     }
   }
 
+//function responsible for choosing the random particles for x and y position data passing to database
 function pass_data(particle_array) {
     var length = particle_array.length;
     var rand_particle = Math.floor(Math.random() * length);
@@ -286,5 +306,6 @@ function pass_data(particle_array) {
     x_coord.value = parseInt(particle_x,10);
     y_coord.value = parseInt(particle_y,10);
 
+    //submitting form so PHP code can run
     submit_btn.click();
 }
