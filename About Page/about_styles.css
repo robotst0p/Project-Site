@@ -15,10 +15,11 @@ header {
 
 body {
   background-image: url("images/coding.gif");
-  background-size: 107%;
+  background-size: cover;
   height: 100%;
   width: 100%;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   overflow-x: hidden;
   font-weight: bold;
 }
@@ -248,16 +249,18 @@ a {
   justify-content: column;
   background-color: inherit;
   color: black;
-  padding: 10px;
+  padding: none;
   border: none;
   outline: none;
-  text-align: middle;
+  text-align: left;
   cursor: pointer;
   transition: 0.3s;
   width: 100%;
+  padding-left: 10%;
+  padding-top: 10%;
   height: 100%;
   font-family: Source Code Pro;
-  font-size: 20px;
+  font-size: 100%;
   font-weight: bold;
 }
 
